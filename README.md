@@ -105,4 +105,13 @@ ALTER TABLE deals ADD INDEX created_date_status_id_index (created_date, status_i
 
 ![](benchmark.png)
 
-Setup 
+### Setup 
+
+- install dependencies with `comporser install`
+- set your database connection on `.env` file
+- import `database/dump.sql` or (`php artisan migrate && php artisan db:seed`)
+- run benchmarks with
+
+```bash
+php artisan app:bench
+```

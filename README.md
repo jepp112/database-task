@@ -35,13 +35,15 @@ Modified column and table names to better fit Laravel conventions
 - idDeal -> id
 - Deals -> deals
 
+and year is set to 2023 instead of 2021
+
 ```sql
 SELECT
   DATE_FORMAT(created_at, "%Y-%m-%d") `created_date`,
   status_id,
   COUNT(id) `count`
 FROM deals
-WHERE created_at BETWEEN "2021-01-01 00:00:00" AND "2021-01-31 23:59:59"
+WHERE created_at BETWEEN "2023-01-01 00:00:00" AND "2023-01-31 23:59:59"
 GROUP BY 1,
          2;
 ```
@@ -56,7 +58,7 @@ SELECT
   status_id,
   COUNT(*) `count`
 FROM deals
-WHERE created_at BETWEEN "2021-01-01 00:00:00" AND "2021-01-31 23:59:59"
+WHERE created_at BETWEEN "2023-01-01 00:00:00" AND "2023-01-31 23:59:59"
 GROUP BY 1,
          2;
 ```
@@ -71,7 +73,7 @@ SELECT
   status_id,
   COUNT(id) `count`
 FROM deals
-WHERE created_at BETWEEN "2021-01-01 00:00:00" AND "2021-01-31 23:59:59"
+WHERE created_at BETWEEN "2023-01-01 00:00:00" AND "2023-01-31 23:59:59"
 GROUP BY 1,
          2;
 ```
@@ -89,8 +91,8 @@ SELECT
   status_id,
   COUNT(id) `count`
 FROM deals
-WHERE created_at BETWEEN "2021-01-01 00:00:00" AND "2021-01-31 23:59:59"
-GROUP BY crated_date, status_id;
+WHERE created_date BETWEEN "2023-01-01" AND "2023-01-31"
+GROUP BY created_date, status_id;
 ```
 
 ### Step Four
